@@ -23,7 +23,8 @@ body{
   }
   
   .navbar-default .navbar-brand{
-    color: #fff;    
+    color: #3a6d99;
+    font-weight: bold;    
   }
   
   .navbar-nav h1{
@@ -31,7 +32,8 @@ body{
   }
   
   .navbar-default{
-    background-color: #3a6d99;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px #eee;
   }
   
   .navbar-nav  li a:hover {
@@ -43,7 +45,7 @@ body{
   }
   
   .navbar-default .navbar-brand:hover{
-    color: #fff;
+    color: #3a6d99;
   }
   
   /* Homepage */
@@ -64,10 +66,14 @@ body{
   }
   
   .card{
-    width: 80%;
-    border: solid 1px #ddd;
+    width: 100%;
     padding: 10px;
     margin: auto;
+  }
+  
+  .card-carrousel{
+    box-shadow: 0 0 0.3rem #999;
+    padding: 10px;
   }
   
   .card .btn-primary{
@@ -75,6 +81,19 @@ body{
     border-radius: 0px;
     border-color: #3a6d99;
     color: #fff;
+  }
+  
+  #images-container{
+    margin-top: 10px;
+  }
+
+  #images-container img{
+    object-fit: cover;
+    margin: auto;
+  }
+  
+  .carousel-control{
+    background-image: none !important;
   }
   
   /* Datapath page */

@@ -6,32 +6,50 @@
 <body>
 <% include partials/menu %>
 
-<div class="container-fluid bg-3 text-center">    
+<div class="container-fluid bg-3 text-center">   
   <!--<h3><%= page %></h3><br>-->
   <div class="row head-title">
     <div class="col-sm-12">
-        <h1> Select your path  </h1>
+        <h1> Select in the list the name that matches the skater in the photo  </h1>
     </div>
   </div>
   <div class="row homeview">
     
-    <div class="col-sm-6">
-        <div class="card">
+    <div class="col-sm-4">
+        <div class="card card-carrousel carousel slide" id="myCarousel" data-interval="false">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-            <div class="card-body">
-                <h2 class="card-title"> Institutions path </h2>
-                <p class="card-text"> Some quick explanation of the data type path </p>
-                <a href="/institutions" class="btn btn-primary"> Follow this path </a>
+            <div class="card-body carousel-inner" id="images-container">
             </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+
         </div>
     </div>
     
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="card">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
-                <h2 class="card-title"> Photographers path </h2>
-                <p class="card-text"> Some quick explanation of the expected results path</p>
+                <h2 class="card-title"> Filters </h2>
+                <p class="card-text"> Some quick explanation</p>
+                <a href="/photographers" class="btn btn-primary"> Follow this path </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h2 class="card-title"> Names list </h2>
+                <p class="card-text"> Some quick explanation</p>
                 <a href="/photographers" class="btn btn-primary"> Follow this path </a>
             </div>
         </div>
@@ -40,7 +58,6 @@
 </div>
 
 <% include partials/footer %>
-
 </body>
 
 <% include partials/script %>
