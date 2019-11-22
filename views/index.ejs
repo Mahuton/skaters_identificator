@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <% include partials/head %>
+</head>
+<body>
+<% include partials/menu %>
+
+<div class="container-fluid bg-3 text-center">    
+  <!--<h3><%= page %></h3><br>-->
+  <div class="row head-title">
+    <div class="col-sm-12">
+        <h1> Select your path  </h1>
+    </div>
+  </div>
+  <div class="row homeview">
+    
+    <div class="col-sm-6">
+        <div class="card">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h2 class="card-title"> Institutions path </h2>
+                <p class="card-text"> Some quick explanation of the data type path </p>
+                <a href="/institutions" class="btn btn-primary"> Follow this path </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-6">
+        <div class="card">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h2 class="card-title"> Photographers path </h2>
+                <p class="card-text"> Some quick explanation of the expected results path</p>
+                <a href="/photographers" class="btn btn-primary"> Follow this path </a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>
+
+</body>
+
+<% include partials/script %>

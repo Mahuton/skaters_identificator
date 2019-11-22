@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <% include partials/head %>
+</head>
+<body>
+<% include partials/menu %>
+
+<div class="container-fluid bg-3 text-center">    
+  <!--<h3><%= page %></h3><br>-->
+  <div class="row head-title">
+    <div class="col-sm-12">
+        <h1> Please fill this form </h1>
+    </div>
+  </div>
+  <div class="row form justify-content-center">
+    <div class="col-lg-4 col-lg-offset-4 col-sm-12">
+        <form class="">           
+            <div class="form-group">
+                <label for="language-code">Language code <span>*</span></label>
+                <input type="text" name="language-code" class="form-control" id="language-code" placeholder="Enter language code" required>
+                <div id="suggestions-list"></div>
+            </div>
+            <div class="form-group">
+                <label for="institution-name">Institution name <span>*</span></label>
+                <input type="text" name="institution-name" class="form-control" id="institution-name" placeholder="Enter your institution name" required>
+            </div>
+            <div class="form-group">
+                <label for="exhibition-name">Exhibition name</label>
+                <input type="text" name="exhibition-name" class="form-control" id="exhibition" placeholder="Enter the exhibition name">
+            </div>
+            <button type="submit" class="btn btn-primary form-submit"> Validate </button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>
+
+</body>
+
+<% include partials/script %>
