@@ -7,7 +7,10 @@ function makeSPARQLQuery( endpointUrl, sparqlQuery, doneCallback ) {
     return $.ajax( endpointUrl, settings ).then( doneCallback );
 }
 
-var endpointUrl = 'https://query.wikidata.org/sparql',
+var answers = $('#answer-yes');
+answers.click( function(){
+    var cat = $('#category-name').text;
+    var endpointUrl = 'https://query.wikidata.org/sparql',
 	sparqlQuery = "SELECT ?competitionLabel ?skater ?skaterLabel ?disciplineLabel ?genderLabel\n" +
         "WHERE {\n" +
         "  ?competition wdt:P31 wd:Q2990963 .\n" +
@@ -21,13 +24,29 @@ var endpointUrl = 'https://query.wikidata.org/sparql',
         "  OPTIONAL { ?skater wdt:P21 ?gender .}\n" +
         "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n" +
         "  }";
+        
+var get_select = document.getElementById('skater-list-select');
 
 makeSPARQLQuery( endpointUrl, sparqlQuery, function( data ) {
 		$( 'body' ).append( $( '<pre>' ).text( JSON.stringify( data ) ) );
-        for(var k = 0; k < data.length; k++){
-            var resp = data[k].skaterLabel;
-            console.log('ok' + resp);
+        var y = data.results.bindings;
+        var nameList = [];
+        
+        for(var k in y){
+            var resp = y[k].skaterLabel.value;
+            nameList.push(y[k].skaterLabel.value);            
         }
-		console.log( data );
+        
+        console.log(nameList.length);
+        
+        for(var e = 0; e < nameList.length; e++){
+            var options = document.createElement('option');
+            options.value = nameList.sort()[e];
+            options.text = nameList.sort()[e];
+            get_select.appendChild(options);
+            //console.log(nameList.sort()[e]);
+        }
 	}
 );
+    
+});
